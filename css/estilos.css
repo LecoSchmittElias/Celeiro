@@ -6,6 +6,12 @@
 
 /* corpo */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: "DM Sans", sans-serif;
     color: #c1c1c1;
@@ -26,8 +32,11 @@ h6 {
 /* menu */
 
 nav {
+    padding-left: 17%;
+    padding-right: 17%;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
     background-color: #45a7ef;
 }
@@ -37,6 +46,10 @@ nav a {
     color: #ffffff;
     font-weight: 800;
     font-size: 15px;
+}
+
+nav a img {
+    max-width: 150px;
 }
 
 nav ul {
@@ -61,68 +74,59 @@ nav ul li a {
     color: #ffffff;
 }
 
+.menu {
+    color: black;
+}
+
+.menu:hover {
+    background-color: white;
+    color: #45a7ef;
+}
+
+#carroca-icon {
+    padding: 12px;
+}
+
 
 /* cabeçalho */
 
 header {
-    max-height: 300px;
+    height: 60vh;
+    max-height: 100%;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+header bgimg {
     background-image: url(../img/celeiro.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: rgb(0, 0, 0);
+    filter: blur(1.5px);
+    -webkit-filter: blur(1.5px);
+    height: 100%;
+    width: 100%;
     background-position: center;
-    filter: blur(2px);
-    -webkit-filter: blur(2px);
-    color: #ffffff;
-    text-align: center;
-    padding: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 header titulos {
-    color: #ffffff;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    text-align: center;
 }
 
 header p {
     margin-bottom: 2em;
-}
-
-.secoes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 5px 5px 5px 5px;
-    background-color: #45a7ef;
-    color: #ffffff;
-}
-
-#galinheiro {
-    background-color: #efc245;
-}
-
-#chiqueiro {
-    background-color: #45ef75;
-}
-
-#curral {
-    background-color: #935ad3;
-}
-
-.secoes h2 {
-    color: #ffffff;
-}
-
-.secoes h3 {
-    color: white;
-}
-
-.secoes p {
-    margin-bottom: 2.5em;
-    max-width: 800px;
 }
 
 
@@ -159,7 +163,7 @@ centro h3 {
 
 .cards {
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0 2%;
     padding: 0 2%;
     display: flex;
     flex-direction: row;
@@ -173,7 +177,8 @@ centro h3 {
     justify-content: center;
     width: 50%;
     border: 1px solid #ccc;
-    margin-right: 1%;
+    margin-right: 0.5%;
+    margin-left: 0.5%;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -183,8 +188,112 @@ centro h3 {
     height: 200px;
 }
 
-.single p,
-a {}
+.single p {
+    margin-bottom: 0!important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+button,
+.menu {
+    padding: 15px 32px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    background-color: #45a7ef;
+    color: white;
+    border: 2px solid #ffffff00;
+    cursor: pointer;
+}
+
+.secoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 5px 5px 5px;
+    background-color: #45a7ef;
+    color: #ffffff;
+}
+
+.secoes #novos .single button {
+    background-color: #efc245;
+    color: #1e1e1e;
+    border: 2px solid #f29100;
+}
+
+.secoes #novos .single button:hover {
+    background-color: #f29100;
+    border: 2px solid #efc245;
+}
+
+.secoes #aves .single button {
+    background-color: #45ef75;
+    color: #1e1e1e;
+    border: 2px solid #4CAF50;
+}
+
+.secoes #aves .single button:hover {
+    background-color: #4CAF50;
+    border: 2px solid #45ef75;
+}
+
+.secoes #suinos .single button {
+    background-color: #935ad3;
+    color: #1e1e1e;
+    border: 2px solid #7700ff;
+}
+
+.secoes #suinos .single button:hover {
+    background-color: #7700ff;
+    border: 2px solid #935ad3;
+}
+
+.secoes #bovinos .single button {
+    background-color: #45a7ef;
+    color: #1e1e1e;
+    border: 2px solid #006aff;
+}
+
+.secoes #bovinos .single button:hover {
+    background-color: #006aff;
+    border: 2px solid #45a7ef;
+}
+
+#galinheiro {
+    background-color: #efc245;
+}
+
+#chiqueiro {
+    background-color: #45ef75;
+}
+
+#curral {
+    background-color: #935ad3;
+}
+
+.secoes h2 {
+    color: #ffffff;
+}
+
+.secoes h3 {
+    color: white;
+}
+
+.secoes p {
+    margin-bottom: 2.5em;
+    max-width: 800px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    background-color: #45a7ef;
+    color: white;
+}
 
 @media only screen and (max-width: 768px) {
     /*nav*/
@@ -198,12 +307,25 @@ a {}
     }
     /* cabeçalho */
     header {
-        height: 600px;
         height: 60vh;
         justify-content: center;
+        align-items: center;
+    }
+    header titulos {
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        padding: 20px;
     }
     .cards {
         flex-direction: column;
+    }
+    .single {
+        width: 100%;
     }
 }
 
